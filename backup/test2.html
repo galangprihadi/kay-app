@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QR & Barcode Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    #reader {
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
+    }
+    #result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>QR & Barcode Scanner</h1>
+  <div id="reader"></div>
+  <div id="result">Scan something...</div>
+
+  <script>
+    const resultEl = document.getElementById('result');
+
+    function onScanSuccess(decodedText, decodedResult) {
+      resultEl.textContent = `✅ Detected: ${decodedText}`;
+      // Stop scanning after first detection (optional)
+      html5QrCode.stop().then(() => {
+        console.log("Scan stopped.");
+      }).catch(err => {
+        console.error("Stop failed: ", err);
+      });
+    }
+
+    function onScanFailure(error) {
+      // Optional: log scan errors (noisy, so keep minimal)
+    }
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length) {
+        //const cameraId = devices[0].id; // default: first camera
+
+        // Cari kamera belakang berdasarkan label
+        const backCam = devices.find(device => /back|rear|environment/i.test(device.label));
+        const cameraId = backCam ? backCam.id : devices[0].id; // fallback ke kamera pertama
+
+
+        html5QrCode.start(
+          cameraId,
+          {
+            fps: 10,              // frame per second
+            qrbox: { width: 250, height: 250 },
+            formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE, Html5QrcodeSupportedFormats.CODE_128]
+          },
+          onScanSuccess,
+          onScanFailure
+        );
+      } else {
+        resultEl.textContent = "Tidak ada kamera ditemukan.";
+      }
+    }).catch(err => {
+      resultEl.textContent = `Kamera error: ${err}`;
+    });
+  </script>
+
+</body>
+</html>

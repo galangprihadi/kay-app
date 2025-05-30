@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kay Shopping</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="topbar">
+            <button onclick="startGame()"><i class="fa-solid fa-basket-shopping"></i></button>
+            <button><i class="fa-solid fa-store"></i></button>
+            <button><i class="fa-solid fa-utensils"></i></button>
+            <button class="reset" onclick="startScanner()"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+        </div>
+
+        <div class="container">
+            <div id="reader"></div>
+            <div id="container-product"></div>
+        </div>
+        
+
+        <script src="https://unpkg.com/html5-qrcode"></script>
+        <script src="shopping.js"></script>
+
+    </body>
+</html>

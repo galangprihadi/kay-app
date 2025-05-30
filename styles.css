@@ -1,0 +1,154 @@
+
+:root {
+    --background-color: #f0f8ff;
+
+    --color-red: #c81e00;
+    --color-darkOrange: #df830a;
+    --color-orange: #ff9d14;
+    --color-blue: #007bff;
+    --color-green: #218f3b;
+    --color-darkGray: #333;
+
+    --color-darkPurple: #52357B;
+    --color-purple: #7F55B1;
+    --color-lightPurple: #9B7EBD;
+    --color-pink: #F49BAB;
+    --color-lightPink: #FFE1E0;
+
+    --font-size2: 1rem;
+    --font-size3: 1.2rem;
+    --font-size4: 1.4rem;
+    --font-size5: 1.6rem;
+    --font-size6: 2rem;
+}
+
+
+body {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+
+/* ================================================================================  TOPBAR  */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    margin-top: 4vw;
+    width: 90vw;
+    padding-left: 2vw;
+    border-radius: 30vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color-darkPurple);
+    z-index: 10;
+}
+
+.topbar button {
+    width: 10vw;
+    height: 10vw;
+    color: white;
+    font-size: var(--font-size4);
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    padding-top: 0.2rem;
+    margin: 2vw 2.5vw;
+}
+
+.topbar .reset {
+    margin: 2vw;
+    width: 12vw;
+    border-radius: 14vw;
+    margin-left: auto;
+    background-color: var(--color-lightPurple);
+    color: var(--color-darkPurple);
+}
+
+
+/* ================================================================================  MAIN CONTAINER  */
+
+.container {
+    margin-top: 20vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* ================================================================================  SCANNER  */
+
+video {
+    border-radius: 30px;
+}
+
+#reader {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5vw;
+}
+
+#reader button {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    right: 0;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: var(--font-size4);
+    font-weight: bold;
+    padding-top: 0.2rem;
+    background-color: var(--color-red);
+    z-index: 5;
+}
+
+
+/* ================================================================================  PRODUCT  */
+
+#container-product {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 4vw;
+}
+
+#container-product img {
+    width: 27vw;
+    height: 27vw;
+    border-radius: 4vw;
+}
+
+
+
+
+.product {
+    min-width: 27vw;
+    min-height: 27vw;
+    border-radius: 3vw;
+
+    background-color: var(--color-orange);
+}
+
+.container-scanner {
+    width: 90vw;
+    border: 1px solid red;
+}
+
+
+
+#result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

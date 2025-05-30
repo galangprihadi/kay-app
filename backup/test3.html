@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QR & Barcode Scanner with Camera Switch</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    #reader { width: 100%; max-width: 360px; margin: auto; }
+    #result { margin-top: 1rem; font-size: 1.2rem; font-weight: bold; }
+    select, button { margin-top: 1rem; padding: 0.5rem; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <h1>QR & Barcode Scanner</h1>
+  <select id="camera-select"></select><br>
+  <button id="start-button">Mulai Scan</button>
+  <div id="reader" style="margin-top: 1rem;"></div>
+  <div id="result">Scan something...</div>
+
+  <script>
+    const cameraSelect = document.getElementById('camera-select');
+    const resultEl = document.getElementById('result');
+    const reader = new Html5Qrcode("reader");
+    let selectedCameraId = null;
+
+    // Isi daftar kamera
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices.length > 0) {
+        devices.forEach((device, index) => {
+          const option = document.createElement('option');
+          option.value = device.id;
+          option.text = device.label || `Kamera ${index + 1}`;
+          cameraSelect.appendChild(option);
+        });
+        selectedCameraId = devices[0].id;
+      } else {
+        resultEl.textContent = "Tidak ada kamera ditemukan.";
+      }
+    }).catch(err => {
+      resultEl.textContent = `Gagal mengambil kamera: ${err}`;
+    });
+
+    // Saat kamera dipilih dari dropdown
+    cameraSelect.addEventListener('change', () => {
+      selectedCameraId = cameraSelect.value;
+    });
+
+    // Tombol mulai scan
+    document.getElementById('start-button').addEventListener('click', () => {
+      reader.start(
+        selectedCameraId,
+        {
+          fps: 10,
+          qrbox: { width: 250, height: 250 },
+          formatsToSupport: [
+            Html5QrcodeSupportedFormats.QR_CODE,
+            Html5QrcodeSupportedFormats.CODE_128
+          ]
+        },
+        (decodedText, decodedResult) => {
+          resultEl.textContent = `✅ Detected: ${decodedText}`;
+          reader.stop(); // Hentikan setelah berhasil
+        },
+        (error) => {
+          // Opsional: log error
+        }
+      ).catch(err => {
+        resultEl.textContent = `Gagal memulai scan: ${err}`;
+      });
+    });
+  </script>
+
+</body>
+</html>
