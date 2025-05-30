@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--background-color);
+    background-color: var(--color-lightPink);
 }
 
 
@@ -67,7 +67,7 @@ body {
     width: 12vw;
     border-radius: 14vw;
     margin-left: auto;
-    background-color: var(--color-lightPurple);
+    background-color: white;
     color: var(--color-darkPurple);
 }
 
