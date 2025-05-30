@@ -20,7 +20,7 @@ const products =[
 
 // ===================================================================== INIT
 
-let numOfProducts = 14;
+let numOfProducts = 9;
 
 let isScanning = false;
 
