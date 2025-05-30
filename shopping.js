@@ -20,7 +20,7 @@ const products =[
 
 // ===================================================================== INIT
 
-let numOfProducts = 14;
+let numOfProducts = 12;
 
 let isScanning = false;
 
@@ -52,6 +52,12 @@ function startGame() {
         card.setAttribute("id", products[i].id);
         card.setAttribute("index", i);
         card.addEventListener('click', scanning);
+        
+
+        if (i == numOfProducts-1){
+            //card.style.marginRight = "auto";
+        }
+
         containerProduct.append(card);
     }
     

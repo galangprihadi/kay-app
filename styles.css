@@ -129,26 +129,117 @@ video {
     border-radius: 4vw;
 }
 
+/* ==========  DESKTOP  ========== */
+
+@media screen and (min-width: 768px) {
+
+    /* ================================================================================  TOPBAR  */
+
+    .topbar {
+        position: fixed;
+        top: 0;
+        margin-top: 4vh;
+        width: 85vw;
+        padding-left: 2vh;
+        border-radius: 30vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--color-darkPurple);
+        z-index: 10;
+    }
+
+    .topbar button {
+        width: 5vh;
+        height: 5vh;
+        color: white;
+        font-size: var(--font-size5);
+        font-weight: bold;
+        border-radius: 50%;
+        border: none;
+        background-color: transparent;
+        padding-top: 0.2rem;
+        margin: 1vh 3vh;
+    }
+
+    .topbar button:hover {
+        color: var(--color-lightPurple);
+    }
+
+    .topbar .reset {
+        margin: 1.5vh;
+        width: 8vh;
+        border-radius: 14vh;
+        margin-left: auto;
+        background-color: white;
+        color: var(--color-darkPurple);
+    }
+
+    .topbar .reset:hover {
+        background-color: var(--color-lightPurple);
+        color: var(--color-darkPurple);
+    }
+
+
+    /* ================================================================================  MAIN CONTAINER  */
+
+    .container {
+        margin-top: 17vh;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    /* ================================================================================  SCANNER  */
+
+    video {
+        border-radius: 5vh;
+        border: 3px solid var(--color-darkPurple);
+    }
+
+    #reader {
+        width: 50%;
+        margin: auto;
+        
+    }
+
+    #reader button {
+        position: absolute;
+        width: 6vh;
+        height: 6vh;
+        right: 0;
+        margin: 1rem;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        font-size: var(--font-size5);
+        font-weight: bold;
+        padding-top: 0.2rem;
+        background-color: var(--color-red);
+        z-index: 5;
+    }
+
+
+    /* ================================================================================  PRODUCT  */
+
+    #container-product {
+        width: 93%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2vh;
+    }
+
+    #container-product img {
+        width: 24vh;
+        height: 24vh;
+        border-radius: 3vh;
+    }
 
 
 
-.product {
-    min-width: 27vw;
-    min-height: 27vw;
-    border-radius: 3vw;
-
-    background-color: var(--color-orange);
-}
-
-.container-scanner {
-    width: 90vw;
-    border: 1px solid red;
-}
-
-
-
-#result {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
 }
