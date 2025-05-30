@@ -24,6 +24,9 @@ let isScanning = false;
 
 const containerProduct = document.getElementById("container-product");
 const scannerReader = document.getElementById("reader");
+const correctSound = document.getElementById("correctSound");
+const wrongSound = document.getElementById("wrongSound");
+
 const html5QrCode = new Html5Qrcode("reader");
 
 function startGame() {
@@ -76,6 +79,13 @@ function scanning() {
                     //this.style.filter = "grayscale(80%) brightness(20%)";
                     this.style.opacity = 0;
                     this.removeEventListener('click', scanning);
+
+                    correctSound.currentTime = 0;
+                    correctSound.play();
+                }
+                else {
+                    wrongSound.currentTime = 0;
+                    wrongSound.play();
                 }
             }, 500);
         },
