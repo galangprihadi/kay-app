@@ -31,6 +31,9 @@ const wrongSound = document.getElementById("wrongSound");
 const html5QrCode = new Html5Qrcode("reader");
 
 function startGame() {
+    buttonSound.currentTime = 0;
+    buttonSound.play();
+
     if (isScanning){
         stopScanner();
     }
@@ -56,10 +59,7 @@ function startGame() {
 // ===================================================================== SCANNER
 
 function scanning() {
-
-    buttonSound.currentTime = 0;
-    buttonSound.play();
-
+    
     if (isScanning){
         stopScanner();
     }
