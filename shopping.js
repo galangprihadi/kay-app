@@ -12,7 +12,7 @@ const products =[
     {src: "products/hotdog.png", id: "KayC"},
     {src: "products/ice-cream.png", id: "KayD"},
     {src: "products/milkshake.png", id: "KayE"},
-    {src: "products/pizza.png", id: "KayF"},
+    {src: "products/mouse.png", id: "KayF"},
 ];
 
 
@@ -59,7 +59,7 @@ function startGame() {
 // ===================================================================== SCANNER
 
 function scanning() {
-    
+
     if (isScanning){
         stopScanner();
     }
