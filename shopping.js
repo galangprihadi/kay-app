@@ -24,6 +24,7 @@ let isScanning = false;
 
 const containerProduct = document.getElementById("container-product");
 const scannerReader = document.getElementById("reader");
+const buttonSound = document.getElementById("buttonSound");
 const correctSound = document.getElementById("correctSound");
 const wrongSound = document.getElementById("wrongSound");
 
@@ -55,6 +56,9 @@ function startGame() {
 // ===================================================================== SCANNER
 
 function scanning() {
+
+    buttonSound.currentTime = 0;
+    buttonSound.play();
 
     if (isScanning){
         stopScanner();
