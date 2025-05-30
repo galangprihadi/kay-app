@@ -1,26 +1,26 @@
 // =====================================================================  PRODUCTS
 
 const products =[
-    {src: "products/stroller.jpeg", id: "KayA"},
-    {src: "products/dompet.jpeg", id: "KayB"},
-    {src: "products/penyiram.jpeg", id: "KayC"},
-    {src: "products/box1.jpeg", id: "KayD"},
-    {src: "products/dot.jpeg", id: "KayE"},
-    {src: "products/kandang.jpeg", id: "KayF"},
-    {src: "products/mobil.jpeg", id: "KayG"},
-    {src: "products/keranjang.jpeg", id: "KayH"},
-    {src: "products/kosmetik1.jpeg", id: "KayI"},
-    {src: "products/sisir.jpeg", id: "KayJ"},
-    {src: "products/panciPink.jpeg", id: "KayK"},
-    {src: "products/panPink.jpeg", id: "KayL"},
-    {src: "products/closet.jpeg", id: "KayM"},
-    {src: "products/panHitam.jpeg", id: "KayN"}
+    {src: "products/stroller.jpg", id: "KayA"},
+    {src: "products/dompet.jpg", id: "KayB"},
+    {src: "products/penyiram.jpg", id: "KayC"},
+    {src: "products/box1.jpg", id: "KayD"},
+    {src: "products/dot.jpg", id: "KayE"},
+    {src: "products/kandang.jpg", id: "KayF"},
+    {src: "products/mobil.jpg", id: "KayG"},
+    {src: "products/keranjang.jpg", id: "KayH"},
+    {src: "products/kosmetik1.jpg", id: "KayI"},
+    {src: "products/sisir.jpg", id: "KayJ"},
+    {src: "products/panciPink.jpg", id: "KayK"},
+    {src: "products/panPink.jpg", id: "KayL"},
+    {src: "products/closet.jpg", id: "KayM"},
+    {src: "products/panHitam.jpg", id: "KayN"}
 ];
 
 
 // ===================================================================== INIT
 
-let numOfProducts = 9;
+let numOfProducts = 14;
 
 let isScanning = false;
 
