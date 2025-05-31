@@ -14,5 +14,20 @@ const products =[
     {src: "products/panciPink.jpg", id: "KayK"},
     {src: "products/panPink.jpg", id: "KayL"},
     {src: "products/closet.jpg", id: "KayM"},
-    {src: "products/panHitam.jpg", id: "KayN"}
+    {src: "products/panHitam.jpg", id: "KayN"},
+    {src: "products/perosotan.jpg", id: "KayO"},
+    {src: "products/vending.jpg", id: "KayP"},
+    {src: "products/buku1.jpg", id: "KayQ"},
+    {src: "products/buku2.jpg", id: "KayR"},
+    {src: "products/buku4.jpg", id: "KayS"},
+    {src: "products/lotion.jpg", id: "KayT"},
+    {src: "products/box3.jpg", id: "KayU"},
+    {src: "products/box2.jpg", id: "KayV"},
+    {src: "products/buku3.jpg", id: "KayW"},
+    {src: "products/kacaMata.jpg", id: "KayX"},
+    {src: "products/bak.jpg", id: "KayY"},
+    {src: "products/kompor.jpg", id: "KayZ"},
+    {src: "products/meja.jpg", id: "Kay01"},
+    {src: "products/pisau.jpg", id: "Kay02"}
+
 ];

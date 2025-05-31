@@ -83,6 +83,21 @@ body {
     align-items: center;
 }
 
+.container .win {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vw;
+    padding-top: 0.2rem;
+    border-radius: 50%;
+    border: 0.5rem solid var(--color-darkPurple);
+    margin-top: 2rem;
+    color: var(--color-darkPurple);
+    font-size: 5rem;
+    font-weight: bold;
+}
+
 
 /* ================================================================================  SCANNER  */
 
@@ -103,7 +118,7 @@ video {
     right: 0;
     margin: 0.5rem;
     border-radius: 50%;
-    border: none;
+    border: 0.3rem solid var(--color-lightPink);
     color: white;
     font-size: var(--font-size4);
     font-weight: bold;
@@ -128,6 +143,7 @@ video {
     height: 27vw;
     border-radius: 4vw;
 }
+
 
 /* ==========  DESKTOP  ========== */
 
@@ -162,21 +178,12 @@ video {
         margin: 1vh 3vh;
     }
 
-    .topbar button:hover {
-        color: var(--color-lightPurple);
-    }
-
     .topbar .reset {
         margin: 1.5vh;
         width: 8vh;
         border-radius: 14vh;
         margin-left: auto;
         background-color: white;
-        color: var(--color-darkPurple);
-    }
-
-    .topbar .reset:hover {
-        background-color: var(--color-lightPurple);
         color: var(--color-darkPurple);
     }
 
@@ -190,6 +197,21 @@ video {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    .container .win {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vh;
+        height: 25vh;
+        padding-top: 0.2rem;
+        border-radius: 50%;
+        border: 0.8rem solid var(--color-darkPurple);
+        margin-top: 2rem;
+        color: var(--color-darkPurple);
+        font-size: 7rem;
+        font-weight: bold;
     }
 
 

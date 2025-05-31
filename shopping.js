@@ -1,7 +1,8 @@
 
 // ===================================================================== INIT
 
-let numOfProducts = 12;
+let numOfProducts = 9;
+let answered = 0;
 
 let isScanning = false;
 
@@ -16,6 +17,8 @@ const html5QrCode = new Html5Qrcode("reader");
 function startGame() {
     buttonSound.currentTime = 0;
     buttonSound.play();
+
+    answered = 0;
 
     if (isScanning){
         stopScanner();
@@ -33,15 +36,24 @@ function startGame() {
         card.setAttribute("id", products[i].id);
         card.setAttribute("index", i);
         card.addEventListener('click', scanning);
-        
-
-        if (i == numOfProducts-1){
-            //card.style.marginRight = "auto";
-        }
 
         containerProduct.append(card);
     }
     
+}
+
+function gameOver() {
+    while (containerProduct.firstChild) {
+        containerProduct.firstChild.remove();
+    }
+
+    const winBox = document.createElement("div");
+    winBox.classList.add("win");
+    winBox.innerHTML = "<i class='fa-solid fa-trophy'></i>";
+    containerProduct.append(winBox);
+
+    winSound.currentTime = 0;
+    winSound.play();
 }
 
 
@@ -57,7 +69,7 @@ function scanning() {
     containerProduct.style.display = "none";
 
     html5QrCode.start(
-        { facingMode: "user" }, 
+        { facingMode: "environment" }, 
         {
             fps: 10,
             qrbox: {width: scannerReader.clientWidth, height: scannerReader.clientWidth},
@@ -68,13 +80,17 @@ function scanning() {
                 stopScanner();
 
                 if (decodedText === this.getAttribute("id")) {
-                    //this.setAttribute("src", "products/blank.png");
-                    //this.style.filter = "grayscale(80%) brightness(20%)";
                     this.style.opacity = 0;
                     this.removeEventListener('click', scanning);
 
                     correctSound.currentTime = 0;
                     correctSound.play();
+
+                    answered += 1;
+
+                    if (answered == numOfProducts) {
+                        gameOver();
+                    }
                 }
                 else {
                     wrongSound.currentTime = 0;
